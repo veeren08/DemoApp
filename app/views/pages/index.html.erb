@@ -1,8 +1,4 @@
-<% if user_signed_in? %>
-    <h1>Welcome <br></h1>
-    <h4><strong><%= current_user.email %></strong></h4>
-      <%#= link_to 'Edit profile', edit_user_registrations_path, :class => 'navbar-link' %>
-<% else %>
+<% if !user_signed_in? %>
     <h1>Please Login</h1> 
 <% end %>
 
