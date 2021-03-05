@@ -1,53 +1,72 @@
 <center>
-  <div id="formContent" style="margin-top:-10px;">
-    <center>
-    <div style="width:250px;">
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
-   <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
-
-  <div class="field">
-    <b><%= f.label :email %></b><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email", class:"form-control" %>
-  </div>
-
-  <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
-    <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
-  <% end %>
-
-  <div class="field">
-    <b><%= f.label :password %></b><br />
-    <%= f.password_field :password, autocomplete: "new-password", class:"form-control" %>
-    <%# if @minimum_password_length %>
-      <%# <br /> %>
-      <%# <em>= @minimum_password_length</em> %>
-    <%# end %>
-  </div>
-
-  <div class="field">
-    <b><%= f.label :password_confirmation %></b><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password", class:"form-control" %>
-  </div>
-
-  <div class="field">
-    <b><%= f.label :current_password %></b><br />
-    <%= f.password_field :current_password, autocomplete: "current-password", class:"form-control" %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit "Update" %>
-  </div>
-<% end %>
-<div style="margin-top:-35px;">
-<%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete, style:"width:210px;text-align:center;"%>
-</div>
+<div id="formContent" style="max-width:700px;">
+    <div class="row">
+        <div class="col-md-10 mx-auto">
+        <h2>Edit <%= resource_name.to_s.humanize %></h2>
+        <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
+          <%= render "devise/shared/error_messages", resource: resource %>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <%= f.label :email %><br />
+              <%= f.email_field :email, autocomplete: "email", class:"form-control",:readonly => true %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.label :first_name %><br />
+              <%= f.text_field :first_name, autofocus: true, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+              <div class="col-sm-6">
+                <%= f.label :last_name %><br />
+                <%= f.text_field :last_name, class:"form-control" %>
+              </div>
+              <div class="col-sm-6">
+                <%= f.label :dateofbirth %><br />
+                <%= f.date_field :dateofbirth, class:"form-control" %>
+              </div>
+            </div>
+            <div class="form-group row">
+              <div class="col-sm-6">
+                <%= f.label :mobile %><br />
+                <%= f.text_field :mobile, class:"form-control" %>
+              </div>
+              <div class="col-sm-3">
+                <%= f.label :city %><br />
+                <%= f.text_field :city, class:"form-control" %>
+            </div>
+            <div class="col-sm-3">
+              <%= f.label :country %><br />
+              <%= f.text_field :country, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <%= f.label :zipcode %><br />
+              <%= f.number_field :zipcode, class:"form-control" %>
+            </div>
+            <div class="col-sm-6">
+              <%= f.label :address %><br />
+              <%= f.text_field :address, class:"form-control" %>
+            </div>
+          </div>
+          <div class="form-group row">
+            <div class="col-sm-6">
+              <%= f.label :current_password %>
+              <%= f.password_field :current_password, class:"form-control" %>
+            </div>
+          </div>
+          <%= f.submit "Update" %>
+          <% end %>
+          <%= button_to "Cancel Account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %>
+          <br>
+        </div>
     </div>
-  </center>
-  </div>
+</div> 
+<br><br><br>
 </center>
 
 
-
+   
 
 
 
