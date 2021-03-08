@@ -20,3 +20,4 @@ window.setTimeout(function() {
         $(this).remove(); 
     });
 }, 2000);
+

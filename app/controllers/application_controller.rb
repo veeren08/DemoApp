@@ -10,4 +10,11 @@ class ApplicationController < ActionController::Base
     def after_sign_in_path_for(resource)
         root_path
     end
+    def new
+        respond_to do |format|
+          format.html
+          format.js
+        end
+      end
+
 end 
