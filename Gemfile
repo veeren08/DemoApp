@@ -9,7 +9,7 @@ gem 'rails', '~> 5.2.4', '>= 5.2.4.5'
 gem 'sqlite3'
 
 gem 'sass-rails', '~> 5.0'
-
+  
 gem 'devise', '~> 4.7', '>= 4.7.3'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'

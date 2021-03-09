@@ -16,5 +16,9 @@ class ApplicationController < ActionController::Base
           format.js
         end
       end
-
+      def change
+        respond_to do |format|               
+          format.js
+        end        
+      end 
 end 
